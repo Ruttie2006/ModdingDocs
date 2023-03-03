@@ -6,6 +6,29 @@ nav_order: 1
 
 <button class="btn js-toggle-dark-mode">Switch to dark mode</button>
 
+<script>
+const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
+const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+	
+if (darkThemeMq.matches) {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'Switch to light theme';
+} else {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'Switch to dark theme';
+}
+	
+jtd.addEvent(toggleDarkMode, 'click', function(){
+  if (jtd.getTheme() === 'dark') {
+    jtd.setTheme('light');
+    toggleDarkMode.textContent = 'Switch to light theme';
+  } else {
+    jtd.setTheme('dark');
+    toggleDarkMode.textContent = 'Switch to dark theme';
+  }
+});
+</script>
+
 > Please note that this documentation is being written with the latest patch of the game in mind, for older patches you can refer to the documentation at [radiance.host](https://radiance.host/apidocs/Getting-Started.html)
 
 ## Introduction:  
@@ -57,27 +80,3 @@ Once you have created a mod that you want to share with the world, you should lo
 ## Todo-section
 
 This documentation is a work in progress, as such there are many sections that are incomplete currently or are marked with *TODO*, if you're a modder who is interested in contributing to the documentation or even if you simply want to correct a typo, head over to the [github repo](https://github.com/PrashantMohta/ModdingDocs) and raise a pull request.
-
-<script>
-const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-	
-if (darkThemeMq.matches) {
-    jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Switch to light theme';
-} else {
-    jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Switch to dark theme';
-}
-	
-jtd.addEvent(toggleDarkMode, 'click', function(){
-  if (jtd.getTheme() === 'dark') {
-    jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Switch to light theme';
-  } else {
-    jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Switch to dark theme';
-  }
-});
-
-</script>
