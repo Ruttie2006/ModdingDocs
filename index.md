@@ -1,82 +1,316 @@
 ---
-title: Getting Started
-nav_order: 1
+layout: default
+title: Markdown kitchen sink
+nav_order: 99
 ---
-# Hollow Knight Modding Docs
 
-<button class="btn js-toggle-dark-mode">Switch to dark mode</button>
+<button class="btn js-toggle-dark-mode">Preview dark color scheme</button>
 
 <script>
 const toggleDarkMode = document.querySelector('.js-toggle-dark-mode');
-const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
-	
-if (darkThemeMq.matches) {
-    jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Switch to light theme';
-} else {
-    jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Switch to dark theme';
-}
-	
+
 jtd.addEvent(toggleDarkMode, 'click', function(){
   if (jtd.getTheme() === 'dark') {
     jtd.setTheme('light');
-    toggleDarkMode.textContent = 'Switch to light theme';
+    toggleDarkMode.textContent = 'Preview dark color scheme';
   } else {
     jtd.setTheme('dark');
-    toggleDarkMode.textContent = 'Switch to dark theme';
+    toggleDarkMode.textContent = 'Return to the light side';
   }
 });
 </script>
 
-> Please note that this documentation is being written with the latest patch of the game in mind, for older patches you can refer to the documentation at [radiance.host](https://radiance.host/apidocs/Getting-Started.html)
+Text can be **bold**, _italic_, or ~~strikethrough~~.
 
-## Introduction:  
-Hollow Knight (patch 1.5.x.x onwards) is a game built with Unity 2020.2.2 and C# (.NET Framework 4.7.2), this means that a mod in the context of hollow knight is a `dll` or a Dynamic-Link Library that allows players to modify the behavior of the game, fix issues or add new features. This is achieved with the help of a Modding Api that handles the loading of mods and giving us ways of injecting our own code in the middle of normal logic.
+[Link to another page](another-page).
 
-The [Hollow Knight Modding Api](https://github.com/hk-modding/api) is based on [MonoMod](https://github.com/MonoMod/MonoMod), a General purpose .NET assembly modding "basework".
+There should be whitespace between paragraphs.
 
-If you're just getting started with modding hollow knight, you should start with the [Getting Started Guide](getting-started.md) to get your system setup for modding.  
+There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
 
-## Your first mod
+# [](#header-1)Header 1
 
-  Once you have your system set-up, you can move on to creating [your first mod](your-first-mod.md).  
-  
-## Deeper dive into modding
+This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
 
-The next few sections will give you a better idea of what modding hollow knight looks like beyond simple mods, Covering the concepts, tools & techniques that exist to make the job easier. It goes without saying that the [Unity Scripting Reference](https://docs.unity3d.com/2020.2/Documentation/ScriptReference/) and [Microsoft .NET API browser](https://docs.microsoft.com/en-us/dotnet/api/?view=netframework-4.7.2) are absolutely invaluable references when working within unity. In the context of hollow knight modding though, there are a few more concepts and resources that you want to be looking at. 
+## [](#header-2)Header 2
 
- - Concepts
-	 - [The Mod Class](mod-baseclass.md)
-	 - [The Mod Lifecycle](mod-lifecycle.md) 
-	 - [Preloading game objects](preloads.md)
-	 - [Logging](logging.md)
-	 - [Hooks](Hooks/hooks.md)
-	 - [Saving Mod Data](saving-mod-data.md)
-	 - [Mod Menu](modmenu.md)
-	 - [Hollow Knight Classes](hkclasses.md)
-	 - [PlaymakerFSMs](understanding-fsms.md)
-	 - [Dependency Mods](dependencymods.md)
-	 - [Scripting](#todo-section)
+> This is a blockquote following a header.
+>
+> When something is important enough, you do it even if the odds are not in your favor.
 
- - Investigative tools
-	   <br>These tools can help investigate how a system works in the game so that you can figure out the best way to modify it.
-	 - [ILspy](Tools/decompilers.md)
-	 - [FSM Viewer](Tools/fsmviewer.md)
-	 - [Unity Explorer](https://github.com/sinai-dev/UnityExplorer/blob/master/README.md#features)
-	 - [Scene Dump](Tools/scenedump.md)
+### [](#header-3)Header 3
 
- - Advanced Concepts
-	 - [Reflection](reflection.md)
-	 - [IL Hooks](Hooks/ilhooks.md)
-	 - [Custom NPC](#todo-section)
-	 - [Custom Enemy](#todo-section)
-	 - [Custom Scene](#todo-section)
+```js
+// Javascript code with syntax highlighting.
+var fun = function lang(l) {
+  dateformat.i18n = require('./lang/' + l)
+  return true;
+}
+```
 
-## Publishing and distributing your mod
+```ruby
+# Ruby code with syntax highlighting
+GitHubPages::Dependencies.gems.each do |gem, version|
+  s.add_dependency(gem, "= #{version}")
+end
+```
 
-Once you have created a mod that you want to share with the world, you should look into [publishing your mod on github](#todo-section). This will allow others to look at the source code and get inspired from your creation. They might even contribute to it, making your mod all the better! Once that is done you can share the link of your published github release with all your friends. If you want to add your mod to the mod installer (scarab) then you can [add your mod to the modlinks](#todo-section).  
+#### [](#header-4)Header 4 `with code not transformed`
 
-## Todo-section
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
+*   This is an unordered list following a header.
 
-This documentation is a work in progress, as such there are many sections that are incomplete currently or are marked with *TODO*, if you're a modder who is interested in contributing to the documentation or even if you simply want to correct a typo, head over to the [github repo](https://github.com/PrashantMohta/ModdingDocs) and raise a pull request.
+##### [](#header-5)Header 5
+
+1.  This is an ordered list following a header.
+2.  This is an ordered list following a header.
+3.  This is an ordered list following a header.
+
+###### [](#header-6)Header 6
+
+[This is a very long link which wraps and therefore doesn't overflow
+even when it comes at the beginning](.) of the line.
+
+- [This is a very long link which wraps and therefore doesn't overflow the line
+  when used first in an item ](.) in a list.
+
+| head1        | head two          | three |
+|:-------------|:------------------|:------|
+| ok           | good swedish fish | nice  |
+| out of stock | good and plenty   | nice  |
+| ok           | good `oreos`      | hmm   |
+| ok           | good `zoute` drop | yumm  |
+
+### There's a horizontal rule below this.
+
+* * *
+
+### Here is an unordered list:
+
+*   Item foo
+*   Item bar
+*   Item baz
+*   Item zip
+
+### And an ordered list:
+
+1.  Item one
+1.  Item two
+1.  Item three
+1.  Item four
+
+### And an ordered list, continued:
+
+1.  Item one
+1.  Item two
+
+Some text
+
+{:style="counter-reset:none"}
+1.  Item three
+1.  Item four
+
+### And an ordered list starting from 42:
+
+{:style="counter-reset:step-counter 41"}
+1.  Item 42
+1.  Item 43
+1.  Item 44
+
+### And a nested list:
+
+- level 1 item
+  - level 2 item
+  - level 2 item
+    - level 3 item
+    - level 3 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+  - level 2 item
+  - level 2 item
+- level 1 item
+
+### Nesting an ol in ul in an ol
+
+- level 1 item (ul)
+  1. level 2 item (ol)
+  1. level 2 item (ol)
+    - level 3 item (ul)
+    - level 3 item (ul)
+- level 1 item (ul)
+  1. level 2 item (ol)
+  1. level 2 item (ol)
+    - level 3 item (ul)
+    - level 3 item (ul)
+  1. level 4 item (ol)
+  1. level 4 item (ol)
+    - level 3 item (ul)
+    - level 3 item (ul)
+- level 1 item (ul)
+
+### And a task list
+
+- [ ] Hello, this is a TODO item
+- [ ] Hello, this is another TODO item
+- [x] Goodbye, this item is done
+
+### Nesting task lists
+
+- [ ] level 1 item (task)
+   - [ ] level 2 item (task)
+   - [ ] level 2 item (task)
+- [ ] level 1 item (task)
+- [ ] level 1 item (task)
+
+### Nesting a ul in a task list
+
+- [ ] level 1 item (task)
+   - level 2 item (ul)
+   - level 2 item (ul)
+- [ ] level 1 item (task)
+- [ ] level 1 item (task)
+
+### Nesting a task list in a ul
+
+- level 1 item (ul)
+   - [ ] level 2 item (task)
+   - [ ] level 2 item (task)
+- level 1 item (ul)
+- level 1 item (ul)
+
+### Small image
+
+![](../../assets/images/small-image.jpg)
+
+### Large image
+
+![](../../assets/images/large-image.jpg)
+
+"[Wroclaw University Library digitizing rare archival texts](https://www.flickr.com/photos/97810305@N08/9401451269)" by [j_cadmus](https://www.flickr.com/photos/97810305@N08) is marked with [CC BY 2.0](https://creativecommons.org/licenses/by/2.0/?ref=openverse).
+
+### Labels
+
+I'm a label
+{: .label }
+
+blue
+{: .label .label-blue }
+green
+{: .label .label-green }
+purple
+{: .label .label-purple }
+yellow
+{: .label .label-yellow }
+red
+{: .label .label-red }
+
+**bold**
+{: .label }
+*italic*
+{: .label }
+***bold + italic***
+{: .label }
+
+### Definition lists can be used with HTML syntax.
+
+<dl>
+<dt>Name</dt>
+<dd>Godzilla</dd>
+<dt>Born</dt>
+<dd>1952</dd>
+<dt>Birthplace</dt>
+<dd>Japan</dd>
+<dt>Color</dt>
+<dd>Green</dd>
+</dl>
+
+#### Multiple description terms and values
+
+Term
+: Brief description of Term
+
+Longer Term
+: Longer description of Term,
+  possibly more than one line
+
+Term
+: First description of Term,
+  possibly more than one line
+
+: Second description of Term,
+  possibly more than one line
+
+Term1
+Term2
+: Single description of Term1 and Term2,
+  possibly more than one line
+
+Term1
+Term2
+: First description of Term1 and Term2,
+  possibly more than one line
+
+: Second description of Term1 and Term2,
+  possibly more than one line
+
+### More code
+
+```python{% raw %}
+def dump_args(func):
+    "This decorator dumps out the arguments passed to a function before calling it"
+    argnames = func.func_code.co_varnames[:func.func_code.co_argcount]
+    fname = func.func_name
+    def echo_func(*args,**kwargs):
+        print fname, ":", ', '.join(
+            '%s=%r' % entry
+            for entry in zip(argnames,args) + kwargs.items())
+        return func(*args, **kwargs)
+    return echo_func
+
+@dump_args
+def f1(a,b,c):
+    print a + b + c
+
+f1(1, 2, 3)
+
+def precondition(precondition, use_conditions=DEFAULT_ON):
+    return conditions(precondition, None, use_conditions)
+
+def postcondition(postcondition, use_conditions=DEFAULT_ON):
+    return conditions(None, postcondition, use_conditions)
+
+class conditions(object):
+    __slots__ = ('__precondition', '__postcondition')
+
+    def __init__(self, pre, post, use_conditions=DEFAULT_ON):
+        if not use_conditions:
+            pre, post = None, None
+
+        self.__precondition  = pre
+        self.__postcondition = post
+{% endraw %}```
+
+```
+Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
+```
+
+### Mermaid Diagrams
+
+The following code is displayed as a diagram only when a `mermaid` key supplied in `_config.yml`.
+
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+
+```
+The final element.
+```
